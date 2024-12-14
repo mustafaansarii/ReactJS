@@ -9,7 +9,7 @@ A simple React-based password generator with customizable options for length, in
 - Copy passwords to the clipboard with a single click.
 
 ## Live Demo
-Check out the live app [https://password-generator.vercel](https://password-generator-q6bfgzpdf-mustafaansariis-projects.vercel.app/).
+Check out the live app [https://password-generator.vercel](https://password-generator-eight-snowy.vercel.app/).
 
 ## Technologies Used
 - vite+React

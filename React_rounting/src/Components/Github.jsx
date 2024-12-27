@@ -46,13 +46,14 @@ function Github() {
                 <div className="flex items-center space-x-2">
                     <span className="font-semibold text-gray-300">Blog:</span>
                     <a
-                        href={data.blog}
+                        href={data.blog.startsWith('http') ? data.blog : `https://${data.blog}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-orange-400 hover:text-orange-500"
                     >
                         {data.blog}
                     </a>
+
                 </div>
                 <div className="flex items-center space-x-2">
                     <span className="font-semibold text-gray-300">Followers:</span>

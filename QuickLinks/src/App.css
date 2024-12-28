@@ -1,0 +1,67 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Light Mode */
+body {
+  position: relative;
+  background-color: #d8d6d6;
+  background-image: 
+    linear-gradient(to right, #80808053 1px, transparent 1px), 
+    linear-gradient(to bottom, #80808061 1px, transparent 1px);
+  background-size: 14px 24px;
+  color: black; 
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("https://img.freepik.com/free-vector/watercolor-gothic-floral-background_52683-81547.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2; /* Sets half transparency */
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  inset-x: 0;
+  top: 0;
+  z-index: -2;
+  margin: auto;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  background-color: #e88af8; /* Fuchsia color */
+  opacity: 0.4;
+  filter: blur(100px);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #090941;
+    background-image: 
+      linear-gradient(to right, #4f4f4f2e 1px, transparent 1px), 
+      linear-gradient(to bottom, #4f4f4f2e 1px, transparent 1px);
+    background-size: 14px 24px;
+    color: white; 
+  }
+
+  body::before {
+    background-image: url("https://img.freepik.com/free-vector/watercolor-gothic-floral-background_52683-81547.jpg");
+    opacity: 0.4; /* Maintains transparency in dark mode */
+  }
+
+  body::after {
+    background-color: #f0abfc; 
+  }
+}

@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: mustafaansari/weather-app-frontend:latest  # Use the frontend image from Docker Hub
+    ports:
+      - "5173:80"  # Expose the frontend on port 5173 (map to 80 in the container)
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    image: mustafaansari/weather-app-backend:latest  # Use the backend image from Docker Hub
+    ports:
+      - "8080:8080"  # Expose the backend on port 8080
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

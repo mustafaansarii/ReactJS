@@ -10,19 +10,27 @@ function App() {
     setLoading(true);
     setError("");
     setWeather(null);
-
+  
     if (!city.trim()) {
       setLoading(false);
       setError("Please enter a valid city name.");
       return;
     }
-
+  
     try {
-      const response = await fetch(`http://localhost:8080/weather/get?city=${city}`);
+      const url_Api = String(import.meta.env.VITE_Backend_API); // Backend API URL
+      const response = await fetch(`${url_Api}${city}`);  // Concatenate with city
+  
+      // Log the raw response to help debug
+      const responseText = await response.text();
+      console.log(responseText);  // Check if it's HTML or JSON
+  
       if (!response.ok) {
         throw new Error("City not found or server error.");
       }
-      const data = await response.json();
+  
+      // Parse the JSON response
+      const data = JSON.parse(responseText);  
       setWeather(data);
     } catch (err) {
       setError(err.message || "An unexpected error occurred.");
@@ -30,6 +38,7 @@ function App() {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">

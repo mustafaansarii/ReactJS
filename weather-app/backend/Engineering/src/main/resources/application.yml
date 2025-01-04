@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://mustafa:1234@weatherapp.38azl.mongodb.net/WeatherAPP?retryWrites=true&w=majority&appName=WeatherAPP
+
+
+
+
+Weather:
+  api:
+    key:
+        BTT89S967C5NVMSS2QWT8SQ3M
